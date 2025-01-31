@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-const images = [
-  "assets/women1.jpeg",
-  "assets/women2.jpeg",
-  "assets/women3.jpeg",
-];
+
+import women1 from "../assets/women1.jpeg";
+import women2 from "../assets/women2.jpeg";
+import women3 from "../assets/women3.jpeg";
+const images = [women1, women2, women3];
 
 function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);

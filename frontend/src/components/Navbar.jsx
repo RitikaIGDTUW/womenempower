@@ -50,13 +50,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import image from "../assets/image.png";
+
 const Navbar = () => {
   return (
     <div className="w-full">
       {/* Top Header Section */}
       <div className="flex justify-between items-center bg-pink-100 p-2 px-2 shadow-md">
         <div className="flex items-center">
-          <img src="../assets/logo.jpeg" alt="Government Logo" className="h-16"  />
+          <img src={image} alt="Government Logo" className="h-16"  />
         </div>
         <div className="flex items-center space-x-10">
           <div className="text-sm">
@@ -91,6 +93,9 @@ const Navbar = () => {
               </li>
               <li>
                 <Link to="/skill" className="text-lg font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Skill Development</Link>
+              </li>
+              <li>
+                <Link to="/story" className="text-lg font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Success Story</Link>
               </li>
             </ul>
           </nav>
