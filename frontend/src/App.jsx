@@ -4,7 +4,7 @@ import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import CommunityForum from './pages/CommunityForum';
 import LegalRights from './pages/LegalRights'
-import Signup from './pages/signup/SignUp';
+import Signup from './pages/signup/Signup';
 import Chat from './pages/Chat';
 import { Toaster } from 'react-hot-toast';
 import { useAuthContext } from './context/AuthContext';
@@ -19,7 +19,7 @@ const App = () => {
       
       <Routes>
         <Route path='/' element={authUser ? <Home /> : <Navigate to="/login" />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/login' element={authUser ? <Navigate to="/" /> : <Login />} />
         <Route path='/signup' element={authUser ? <Navigate to="/" /> : <Signup />} />
         <Route path='/chat' element={authUser ? <Chat /> : <Navigate to="/login" />} />
         <Route path="/forum" element={<CommunityForum />} />
