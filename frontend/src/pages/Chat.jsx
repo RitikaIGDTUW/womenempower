@@ -198,7 +198,7 @@ import Footer from "../components/Footer";
 
 const Chat = () => {
   const [message, setMessage] = useState("");
-  const [conversation, setConversation] = useState([{ role: "assistant", text: "Hello!! I'm here to resolve your doubts.." }]);
+  const [conversation, setConversation] = useState([{ role: "assistant", text: "You are stronger than you think! Need support? 💪" }]);
   const [loading, setLoading] = useState(false);
 
   const sendMessage = async () => {
@@ -274,7 +274,7 @@ const Chat = () => {
               >
                 <div
                   className={`p-3 rounded-lg max-w-[75%] whitespace-pre-line shadow-lg ${
-                    msg.role === "user" ? "bg-purple-300 text-white" : "bg-pink-200 text-gray-800"
+                    msg.role === "user" ? "bg-purple-300 text-white" : "bg-green-100 text-gray-800"
                   }`}
                 >
                   {msg.text}

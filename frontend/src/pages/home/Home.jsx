@@ -5,6 +5,7 @@ import AboutUs from "../../components/AboutUs";
 import Feedback from "../../components/Feedback";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import QuickNavigation from "../../components/QuickNavigation";
 
 function Home() {
   return (
@@ -14,7 +15,9 @@ function Home() {
                 <Navbar/>
                 
             </div>
+            
             <Carousel/>
+            <QuickNavigation/>
             <AboutUs/>
             <Feedback/>
            
