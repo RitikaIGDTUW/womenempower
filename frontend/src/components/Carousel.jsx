@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 const images = [
-  "../../public/images/women1.jpeg",
-  "../../public/images/women3.jpeg",
-  "../../public/images/women2.jpeg",
+  "assets/women1.jpeg",
+  "assets/women2.jpeg",
+  "assets/women3.jpeg",
 ];
 
 function Carousel() {
