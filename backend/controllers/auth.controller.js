@@ -4,19 +4,28 @@ import generateTokenAndSetCookie from "../utils/generateToken.js";
 
 export const signup = async (req, res) => {
   try {
+    console.log("Request Body:", req.body); // Log the request body
+
     const { fullname, username, password, confirmPassword } = req.body;
 
+    // Validate input
+    if (!fullname || !username || !password || !confirmPassword) {
+      return res.status(400).json({ error: "All fields are required" });
+    }
+
     if (password !== confirmPassword) {
-      return res.status(400).json({ error: "password not match" });
+      return res.status(400).json({ error: "Passwords do not match" });
     }
 
     const user = await User.findOne({ username });
-
     if (user) {
-      return res.status(400).json({ error: "username already exist" });
+      return res.status(400).json({ error: "Username already exists" });
     }
 
     // Hash password
+    if (!password) {
+      return res.status(400).json({ error: "Password is required" });
+    }
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
@@ -30,18 +39,17 @@ export const signup = async (req, res) => {
       // Generate JWT token
       await generateTokenAndSetCookie(newUser._id, res);
       await newUser.save();
-
       res.status(201).json({
         _id: newUser._id,
         fullname: newUser.fullname,
         username: newUser.username,
       });
     } else {
-      res.status(400).json({ error: "invalid user data" });
+      res.status(400).json({ error: "Invalid user data" });
     }
   } catch (error) {
-    console.log("error in signup controller", error.message);
-    res.status(500).json({ error: "internal server error" });
+    console.log("Error in signup controller", error.message);
+    res.status(500).json({ error: "Internal server error" });
   }
 };
 
