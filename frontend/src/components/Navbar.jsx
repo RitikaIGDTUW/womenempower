@@ -47,18 +47,90 @@
 
 // export default Navbar;
 
+// import React from "react";
+// import { Link } from "react-router-dom";
+
+// import image from "../assets/image.png";
+
+// const Navbar = () => {
+//   return (
+//     <div className="w-full">
+//       {/* Top Header Section */}
+//       <div className="flex justify-between items-center bg-pink-100 p-2 px-2 shadow-md">
+//         <div className="flex items-center">
+//           <img src={image} alt="Government Logo" className="h-16"  />
+//         </div>
+//         <div className="flex items-center space-x-10">
+//           <div className="text-sm">
+//             <p className="font-bold text-purple-900 text-lg">Women Helpline Number</p>
+//             <span className="text-purple-800 text-base">1800-11-9292</span>
+//           </div>
+//           <div className="text-sm">
+//             <p className="font-bold text-purple-900 text-lg">For Emergency</p>
+//             <span className="text-purple-800 text-base">112</span>
+//           </div>
+//           <Link to={"/login"} className="px-5 py-2 bg-pink-500 text-white font-semibold rounded-lg shadow-md hover:bg-pink-600 hover:scale-105 transition duration-200">Login</Link>
+//           <Link to="/logout" className="px-5 py-2 bg-purple-500 text-white font-semibold rounded-lg shadow-md hover:bg-purple-600 hover:scale-105 transition duration-200">Logout</Link>
+//         </div>
+//       </div>
+
+//       {/* Navbar Section */}
+//       <header className="bg-purple-600 text-white shadow-lg">
+//         <div className="navbar px-6 py-4 flex justify-between items-center">
+//           <nav>
+//             <ul className="flex space-x-8">
+//               <li>
+//                 <Link to="/" className="text-lg font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Home</Link>
+//               </li>
+//               <li>
+//                 <Link to="/legal" className="text-lg font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Legal Rights</Link>
+//               </li>
+//               <li>
+//                 <Link to="/chat" className="text-lg font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Mano Sathi (Chatbot)</Link>
+//               </li>
+//               <li>
+//                 <Link to="/forum" className="text-lg font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Discussion Forum</Link>
+//               </li>
+//               <li>
+//                 <Link to="/skill" className="text-lg font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Skill Development</Link>
+//               </li>
+//               <li>
+//                 <Link to="/story" className="text-lg font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Success Story</Link>
+//               </li>
+//             </ul>
+//           </nav>
+//           <div className="flex items-center space-x-2">
+//             <input
+//               type="text"
+//               placeholder="Search..."
+//               className="input input-bordered input-sm px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+//             />
+//             <button className="px-5 py-2 bg-pink-500 text-white font-semibold rounded-lg shadow-md hover:bg-pink-600 hover:scale-105 transition duration-200">Search</button>
+//           </div>
+//         </div>
+//       </header>
+//     </div>
+//   );
+// };
+
+// export default Navbar;
+
+
+
 import React from "react";
 import { Link } from "react-router-dom";
-
+import useLogout from "../hooks/useLogout.js"; // Import the logout hook
 import image from "../assets/image.png";
 
 const Navbar = () => {
+  const { loading, logout } = useLogout(); // Use the logout hook
+
   return (
     <div className="w-full">
       {/* Top Header Section */}
       <div className="flex justify-between items-center bg-pink-100 p-2 px-2 shadow-md">
         <div className="flex items-center">
-          <img src={image} alt="Government Logo" className="h-16"  />
+          <img src={image} alt="Government Logo" className="h-16" />
         </div>
         <div className="flex items-center space-x-10">
           <div className="text-sm">
@@ -69,8 +141,21 @@ const Navbar = () => {
             <p className="font-bold text-purple-900 text-lg">For Emergency</p>
             <span className="text-purple-800 text-base">112</span>
           </div>
-          <Link to="/login" className="px-5 py-2 bg-pink-500 text-white font-semibold rounded-lg shadow-md hover:bg-pink-600 hover:scale-105 transition duration-200">Login</Link>
-          <Link to="/logout" className="px-5 py-2 bg-purple-500 text-white font-semibold rounded-lg shadow-md hover:bg-purple-600 hover:scale-105 transition duration-200">Logout</Link>
+          <Link to="/login" className="px-5 py-2 bg-pink-500 text-white font-semibold rounded-lg shadow-md hover:bg-pink-600 hover:scale-105 transition duration-200">
+            Login
+          </Link>
+          {/* Logout Button */}
+          <button
+            onClick={logout}
+            disabled={loading}
+            className={`px-5 py-2 font-semibold rounded-lg shadow-md transition duration-200 ${
+              loading
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-purple-500 text-white hover:bg-purple-600 hover:scale-105"
+            }`}
+          >
+            {loading ? "Logging Out..." : "Logout"}
+          </button>
         </div>
       </div>
 
@@ -114,4 +199,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

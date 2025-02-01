@@ -2,6 +2,7 @@
 import axios from "axios";
 
 const API_BASE_URL = "/api/posts";
+console.log(`${API_BASE_URL}/`);    
 
 export const fetchPosts = async () => {
     const response = await axios.get(`${API_BASE_URL}/`);
