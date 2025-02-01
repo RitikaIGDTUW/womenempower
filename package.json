@@ -1,7 +1,7 @@
 {
   "name": "chaat-app",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "backend/server.js",
   "scripts": {
     "start": "node backend/server.js",
     "build":"npm install &&  npm install --prefix frontend && npm run build --prefix frontend"
