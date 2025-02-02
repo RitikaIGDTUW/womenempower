@@ -18,14 +18,19 @@ const App = () => {
     <div>
       
       <Routes>
-        <Route path='/' element={< Home/>} />
-        <Route path='/login' element={authUser ? <Navigate to="/"/>:<Login/>}/>
-        <Route path='/signup' element={authUser ? <Navigate to="/"/>:  <Signup />} />
-        <Route path='/chat' element={authUser ? <Chat /> : <Navigate to="/login" />} />
-        <Route path="/forum" element={<CommunityForum />} />
-        <Route path="/legal" element={<LegalRights />} />
-        <Route path="/skill" element={<Skill />} />
+        {/* Public Routes */}
+        <Route path="/" element={authUser ? <Home /> : <Navigate to="/login" />} />
         <Route path="/story" element={<SuccessStoriesPage />} />
+
+        {/* Protected Routes */}
+        <Route path="/chat" element={authUser ? <Chat /> : <Navigate to="/login" />} />
+        <Route path="/forum" element={authUser ? <CommunityForum /> : <Navigate to="/login" />} />
+        <Route path="/legal" element={authUser ? <LegalRights /> : <Navigate to="/login" />} />
+        <Route path="/skill" element={authUser ? <Skill /> : <Navigate to="/login" />} />
+
+        {/* Authentication Routes */}
+        <Route path="/login" element={authUser ? <Navigate to="/" /> : <Login />} />
+        <Route path="/signup" element={authUser ? <Navigate to="/" /> : <Signup />} />
       </Routes>
       <Toaster />
     </div>

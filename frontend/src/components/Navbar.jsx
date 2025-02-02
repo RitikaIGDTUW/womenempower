@@ -119,11 +119,12 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import useLogout from "../hooks/useLogout.js"; // Import the logout hook
+ // Import the logout hook
 import image from "../assets/image.png";
+import LogoutButton from "./LogoutButton.jsx";
 
 const Navbar = () => {
-  const { loading, logout } = useLogout(); // Use the logout hook
+  
 
   return (
     <div className="w-full">
@@ -141,21 +142,11 @@ const Navbar = () => {
             <p className="font-bold text-purple-900 text-lg">For Emergency</p>
             <span className="text-purple-800 text-base">112</span>
           </div>
-          <Link to="/login" className="px-5 py-2 bg-pink-500 text-white font-semibold rounded-lg shadow-md hover:bg-pink-600 hover:scale-105 transition duration-200">
+          <Link to="/login" className="px-5 py-2 bg-pink-600 text-white font-semibold rounded-lg shadow-md hover:bg-pink-600 hover:scale-105 transition duration-200">
             Login
           </Link>
           {/* Logout Button */}
-          <button
-            onClick={logout}
-            disabled={loading}
-            className={`px-5 py-2 font-semibold rounded-lg shadow-md transition duration-200 ${
-              loading
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-purple-500 text-white hover:bg-purple-600 hover:scale-105"
-            }`}
-          >
-            {loading ? "Logging Out..." : "Logout"}
-          </button>
+          <LogoutButton/>
         </div>
       </div>
 

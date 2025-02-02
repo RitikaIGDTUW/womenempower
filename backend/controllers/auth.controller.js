@@ -62,9 +62,9 @@ export const login = async (req, res) => {
       return res.status(400).json({ error: "Invalid username or password" });
     }
 
-    const isPasswordCorrect = await bcrypt.compare(password, user.password);
+    const isPasswordCorrect = await bcrypt.compare(password, user?.password ||"");
 
-    if (!isPasswordCorrect) {
+    if (!user || !isPasswordCorrect) {
       return res.status(400).json({ error: "Invalid username or password" });
     }
 
@@ -88,7 +88,7 @@ export const login = async (req, res) => {
 export const logout = async (req, res) => {
   try {
     res.clearCookie("jwt");
-    res.status(200).json({ mesage: "logged out succesfully" });
+    res.status(200).json({ message: "logged out succesfully" });
   } catch (error) {
     console.log("error in logout controller", error.message);
     res.status(500).json({ error: "internal server error" });

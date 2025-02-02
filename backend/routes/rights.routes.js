@@ -15,7 +15,7 @@ import authenticateUser from "../middleware/authenticateUser.js";
 
 const router = express.Router();
 
-router.get("/", rightsController); // Fetch legal rights
+router.get("/",authenticateUser, rightsController); // Fetch legal rights
 router.post("/ask-rights",authenticateUser, askRights);
 
 
