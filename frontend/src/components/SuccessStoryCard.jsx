@@ -46,7 +46,7 @@ const SuccessStoryCard = ({ story }) => {
 
       {/* Text Section */}
       <div className="p-6 w-full text-center">
-        <h3 className="text-2xl font-bold text-purple-700">{story.name}</h3>
+        <h3 className="text-2xl font-bold text-purples-700">{story.name}</h3>
         <p className="mt-4 text-gray-700 text-md leading-relaxed">{story.story}</p>
       </div>
     </motion.div>

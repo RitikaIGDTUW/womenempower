@@ -12,7 +12,7 @@ const Skill = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-grow flex justify-center items-center p-6">
+      <div className="flex-grow flex justify-center items-center px-6 ">
         <div className="max-w-screen-xl mx-auto bg-pink-100 shadow-lg rounded-lg p-6 w-full">
           <motion.h2
             className="text-3xl font-extrabold text-center text-pink-700"

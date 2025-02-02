@@ -179,13 +179,31 @@ const Navbar = () => {
             </ul>
           </nav>
           <div className="flex items-center space-x-2">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="input input-bordered input-sm px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
-            />
-            <button className="px-5 py-2 bg-pink-500 text-white font-semibold rounded-lg shadow-md hover:bg-pink-600 hover:scale-105 transition duration-200">Search</button>
-          </div>
+  <a
+    href="https://ncw.nic.in/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center space-x-2 px-5 py-2 bg-pink-400 text-white font-semibold rounded-lg shadow-md hover:bg-pink-600 hover:scale-105 transition duration-200"
+  >
+    {/* Use an icon (FontAwesome or Heroicons) */}
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-6 h-6"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      strokeWidth="2"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M21 12H3M12 3l9 9-9 9"
+      />
+    </svg>
+    <span>National Commission for Women</span>
+  </a>
+</div>
+
         </div>
       </header>
     </div>

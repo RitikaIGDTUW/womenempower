@@ -9,7 +9,7 @@ function AboutUs() {
 >
       <h2 className="text-4xl text-purple-800 font-bold mb-4">✨ About Us</h2>
       <p className="text-lg text-gray-700">
-      <strong>Ujjwal Udaan</strong> 💜  is dedicated to empowering women by providing respect, support, and opportunities to help them build brighter futures. We offer education on legal rights, health, and financial independence, along with free courses, mentorship, and career training. Our platform provides therapy, peer support, and self-care resources to ensure mental well-being. We also help women find job opportunities, explore freelance work, and access entrepreneurship resources💜.
+      <strong>Ujjwal उड़ान</strong> 💜  is dedicated to empowering women by providing respect, support, and opportunities to help them build brighter futures. We offer education on legal rights, health, and financial independence, along with free courses, mentorship, and career training. Our platform provides therapy, peer support, and self-care resources to ensure mental well-being. We also help women find job opportunities, explore freelance work, and access entrepreneurship resources💜.
 
 Our supportive community encourages women to uplift each other and grow together. Take the first step toward a new beginning with Sashakt Saathi—you are never alone. For help or questions, feel free to reach out to us.
 

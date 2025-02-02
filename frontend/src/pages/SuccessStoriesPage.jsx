@@ -31,7 +31,7 @@ const SuccessStoriesPage = () => {
                         whileHover={{ scale: 1.1, rotate: 2 }}
                         transition={{ type: "spring", stiffness: 300 }}
                     >
-                        ⚖️ Success Story of Empowered Women
+                        ⚖️ Success Stories of Empowered Women
                     </motion.h1>
         <SuccessStoriesList stories={stories} />
       </div>
