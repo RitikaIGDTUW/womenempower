@@ -149,11 +149,13 @@ const LegalRights = () => {
                                 >
                                     <h3 className="text-lg font-semibold text-purple-600">{right.title}</h3>
                                     <p className="text-gray-700 mt-2">{right.description.slice(0, 100)}...</p>
+                                    
 
                                     {/* Expandable content */}
                                     {expandedIndex === index && (
-                                        <div className="mt-4 text-gray-600">
-                                            <p>{right.description}</p>
+                                        <div className="mt-4">
+                                            <h3 className="text-lg font-semibold text-purple-600">{right.title_hindi}</h3>
+                                            <p className="text-gray-700 mt-2">{right.description_hindi.slice(0, 100)}...</p>
                                         </div>
                                     )}
                                 </motion.div>

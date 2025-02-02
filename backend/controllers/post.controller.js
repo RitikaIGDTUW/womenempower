@@ -4,9 +4,12 @@ import mongoose from "mongoose";
 
 export const createPost = async (req, res) => {
   try {
+    console.log("Request body:", req.body);
     const { title, content } = req.body;
     const userId = req.userId; // Extracted from the token middleware
-
+    if (!title || !content) {
+      return res.status(400).json({ error: "Title and content are required." });
+    }
     const newPost = new Post({
       title,
       content,

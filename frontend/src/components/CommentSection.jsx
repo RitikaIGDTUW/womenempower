@@ -42,13 +42,9 @@ const CommentSection = ({ postId }) => {
 
     const handleCommentSubmit = async (e) => {
         e.preventDefault();
-        const token = localStorage.getItem("token");
-        if (!token) {
-            alert("Please log in to comment.");
-            return;
-        }
+        
 
-        await addComment(postId, comment, token);
+        await addComment(postId, comment);
         setComment("");
     };
 

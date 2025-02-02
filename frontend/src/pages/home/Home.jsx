@@ -1,6 +1,7 @@
 
 import React from "react"; 
 import Carousel from "../../components/Carousel";
+
 import AboutUs from "../../components/AboutUs";
 import Feedback from "../../components/Feedback";
 import Footer from "../../components/Footer";
@@ -17,6 +18,31 @@ function Home() {
             </div>
             
             <Carousel/>
+
+
+            {/* Story Section 1 */}
+      <div className="flex flex-col md:flex-row items-center justify-center gap-8 px-8 py-12">
+        {/* Text Container */}
+        <div className="bg-pink-200 p-6 md:w-1/2 rounded-full shadow-lg flex items-center justify-center text-center">
+          <p className="text-lg font-semibold text-gray-800">
+            She was born into circumstances she couldn't control, forced into a life she never chose. Yet, within the walls of despair, she found the strength to dream. Her story is one of resilience, courage, and the unbreakable human spirit.
+          </p>
+        </div>
+        {/* Image Container */}
+        <img src="/images/brothel-woman-1.jpg" alt="A woman with resilience" className="md:w-1/3 w-full rounded-lg shadow-md" />
+      </div>
+
+      {/* Story Section 2 (Reversed) */}
+      <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-8 px-8 py-12">
+        {/* Text Container */}
+        <div className="bg-purple-200 p-6 md:w-1/2 rounded-full shadow-lg flex items-center justify-center text-center">
+          <p className="text-lg font-semibold text-gray-800">
+            With every sunrise, she fought for her freedom, determined to escape the chains of her past. Her journey was painful, yet she refused to be defined by her circumstances. Today, she stands as a beacon of hope for many others.
+          </p>
+        </div>
+        {/* Image Container */}
+        <img src="/images/brothel-woman-2.jpg" alt="A woman overcoming struggles" className="md:w-1/3 w-full rounded-lg shadow-md" />
+      </div>
             <QuickNavigation/>
             <AboutUs/>
             <Feedback/>

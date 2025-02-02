@@ -25,7 +25,7 @@ const App = () => {
         {/* Protected Routes */}
         <Route path="/chat" element={authUser ? <Chat /> : <Navigate to="/login" />} />
         <Route path="/forum" element={authUser ? <CommunityForum /> : <Navigate to="/login" />} />
-        <Route path="/legal" element={authUser ? <LegalRights /> : <Navigate to="/login" />} />
+        <Route path="/legal" element={<LegalRights /> }/>
         <Route path="/skill" element={authUser ? <Skill /> : <Navigate to="/login" />} />
 
         {/* Authentication Routes */}

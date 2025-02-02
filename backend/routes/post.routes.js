@@ -6,7 +6,7 @@ import authenticateUser from "../middleware/authenticateUser.js";
 const router = express.Router();
 
 router.post("/create", authenticateUser, createPost);
-router.get("/",authenticateUser, getPosts);
+router.get("/", authenticateUser, getPosts);
 router.post("/comment", authenticateUser, addComment);
 
 export default router;

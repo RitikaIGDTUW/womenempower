@@ -9,16 +9,18 @@ export const fetchPosts = async () => {
     return response.data;
 };
 
-export const createPost = async (title, content, token) => {
-    const response = await axios.post(`${API_BASE_URL}/create`, { title, content }, {
-        headers: { Authorization: `Bearer ${token}` },
-    });
-    return response.data;
-};
+export const createPost = async (title, content) => {
+    try {
+      const response = await axios.post("/api/posts/create", { title, content });
+      return response.data;
+    } catch (error) {
+      console.error("Error creating post:", error.message);
+      throw error;
+    }
+  };
 
-export const addComment = async (postId, content, token) => {
-    const response = await axios.post(`${API_BASE_URL}/comment`, { postId, content }, {
-        headers: { Authorization: `Bearer ${token}` },
-    });
+export const addComment = async (postId, content) => {
+    const response = await axios.post(`${API_BASE_URL}/comment`, { postId, content }, 
+    );
     return response.data;
 };

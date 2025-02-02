@@ -96,63 +96,6 @@
 
 
 
-// import { useState } from "react";
-// import { motion } from "framer-motion";
-// import { createPost } from "../utils/forumApi"; // Import API function
-
-// const PostForm = ({ onPostCreated }) => {
-//   const [title, setTitle] = useState("");
-//   const [content, setContent] = useState("");
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-    
-//     const token = localStorage.getItem("token"); // Retrieve token
-//     if (!token) {
-//       alert("Please log in to create a post.");
-//       return;
-//     }
-
-//     await createPost(title, content, token);
-//     setTitle("");
-//     setContent("");
-//     onPostCreated(); // Refresh posts
-//   };
-
-//   return (
-//     <motion.div
-//      className="bg-gradient-to-br from-purple-200 via-pink-100 to-pink-200 p-6 rounded-2xl shadow-lg flex flex-col gap-4 transition-transform duration-300 w-3/4"
-//       whileHover={{
-//         rotateX: -15, 
-//         scale: 1.1, 
-//         boxShadow: "0px 15px 30px rgba(0, 0, 0, 0.3)", 
-//       }}
-//       transition={{ duration: 0.4, ease: "easeOut" }}
-//     >
-//       <h2 className="text-lg font-bold text-primary">Share your Story...</h2>
-//       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-//         <input
-//           type="text"
-//           placeholder="Title"
-//           value={title}
-//           onChange={(e) => setTitle(e.target.value)}
-//           className="input input-bordered w-full bg-white"
-//           required
-//         />
-//         <textarea
-//           placeholder="What's on your mind?"
-//           value={content}
-//           onChange={(e) => setContent(e.target.value)}
-//           className="textarea textarea-bordered w-full bg-white"
-//           required
-//         ></textarea>
-//         <button type="submit" className="btn bg-purple-400 text-gray-50 font-bold">Post</button>
-//       </form>
-//     </motion.div>
-//   );
-// };
-
-// export default PostForm;
 
 
 import { useState } from "react";
@@ -165,18 +108,27 @@ const PostForm = ({ onPostCreated }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    const token = localStorage.getItem("token"); // Retrieve token
-    if (!token) {
-      alert("Please log in to create a post.");
-      return;
+  
+    try {
+      console.log("Sending post data:", { title, content }); // Log the data
+      await createPost(title, content);
+      setTitle("");
+      setContent("");
+      onPostCreated();
+    } catch (error) {
+      console.error("Error creating post:", error.message);
+      
     }
-
-    await createPost(title, content, token);
-    setTitle("");
-    setContent("");
-    onPostCreated(); // Refresh posts
   };
+
+  // const handleSubmit = (e) => {
+  //       e.preventDefault();
+  //       if (title && content) {
+  //         addPost({ title, content });
+  //         setTitle("");
+  //         setContent("");
+  //       }
+  //     };
 
   return (
     <motion.div

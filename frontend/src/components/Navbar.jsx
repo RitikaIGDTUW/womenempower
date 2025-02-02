@@ -121,7 +121,7 @@ import React from "react";
 import { Link } from "react-router-dom";
  // Import the logout hook
 import image from "../assets/image.png";
-import LogoutButton from "./LogoutButton.jsx";
+
 
 const Navbar = () => {
   
@@ -145,8 +145,11 @@ const Navbar = () => {
           <Link to="/login" className="px-5 py-2 bg-pink-600 text-white font-semibold rounded-lg shadow-md hover:bg-pink-600 hover:scale-105 transition duration-200">
             Login
           </Link>
+          <Link to="/logout" className="px-5 py-2 bg-purple-600 text-white font-semibold rounded-lg shadow-md hover:bg-pink-600 hover:scale-105 transition duration-200">
+            Logout
+          </Link>
           {/* Logout Button */}
-          <LogoutButton/>
+          
         </div>
       </div>
 
