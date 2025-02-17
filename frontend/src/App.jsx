@@ -9,6 +9,7 @@ import Chat from './pages/Chat';
 import { Toaster } from 'react-hot-toast';
 import { useAuthContext } from './context/AuthContext';
 import Skill from './pages/skill';
+import NGOs from './pages/NGO';
 import SuccessStoriesPage from './pages/SuccessStoriesPage';
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/forum" element={authUser ? <CommunityForum /> : <Navigate to="/login" />} />
         <Route path="/legal" element={<LegalRights /> }/>
         <Route path="/skill" element={authUser ? <Skill /> : <Navigate to="/login" />} />
+        <Route path="/ngos" element={<NGOs />} /> {/* Add route for NGOs page */}
 
         {/* Authentication Routes */}
         <Route path="/login" element={authUser ? <Navigate to="/" /> : <Login />} />

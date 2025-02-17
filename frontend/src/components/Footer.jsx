@@ -25,6 +25,7 @@ const Footer = () => {
           <Link to="/forum" className="hover:text-purple-300 text-xl font-semibold">Forum</Link>
           <Link to="/legal" className="hover:text-purple-300 text-xl font-semibold">Legal Rights</Link>
           <Link to="/skill" className="hover:text-purple-300 text-xl font-semibold">Skill Development</Link>
+          <Link to="/ngos" className="hover:text-purple-300 text-xl font-semibold">NGO Help</Link>
         </div>
 
         {/* Social Media Links */}

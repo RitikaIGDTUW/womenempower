@@ -157,24 +157,27 @@ const Navbar = () => {
       <header className="bg-purple-600 text-white shadow-lg">
         <div className="navbar px-6 py-4 flex justify-between items-center">
           <nav>
-            <ul className="flex space-x-8">
+            <ul className="flex space-x-7">
               <li>
-                <Link to="/" className="text-lg font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Home</Link>
+                <Link to="/" className="text-md font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Home</Link>
               </li>
               <li>
-                <Link to="/legal" className="text-lg font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Legal Rights</Link>
+                <Link to="/legal" className="text-md font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Legal Rights</Link>
               </li>
               <li>
-                <Link to="/chat" className="text-lg font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Mano Sathi (Chatbot)</Link>
+                <Link to="/chat" className="text-md font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Mano Sathi (Chatbot)</Link>
               </li>
               <li>
-                <Link to="/forum" className="text-lg font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Discussion Forum</Link>
+                <Link to="/forum" className="text-md font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Discussion Forum</Link>
               </li>
               <li>
-                <Link to="/skill" className="text-lg font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Skill Development</Link>
+                <Link to="/skill" className="text-md font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Skill Development</Link>
               </li>
               <li>
-                <Link to="/story" className="text-lg font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Success Story</Link>
+                <Link to="/ngos" className="text-md font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">NGO Help</Link>
+              </li>
+              <li>
+                <Link to="/story" className="text-md font-semibold hover:text-gray-300 hover:scale-110 transition duration-200">Success Story</Link>
               </li>
             </ul>
           </nav>

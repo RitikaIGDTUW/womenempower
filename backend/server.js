@@ -9,6 +9,7 @@ import postRoutes from "./routes/post.routes.js";
 import geminiRoutes from "./routes/gemini.routes.js";
 import rightsRoutes from "./routes/rights.routes.js"
 import successStoryRoutes from "./routes/story.routes.js";
+import ngoRoutes from "./routes/ngo.routes.js";
 import connectToMongoDB from "./db/connectToMongoDB.js";
 
 
@@ -25,6 +26,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/gemini", geminiRoutes);
 app.use("/api/rights",rightsRoutes);
+app.use("/api/ngos", ngoRoutes);
 app.use("/api/success-stories", successStoryRoutes);
 
 
